@@ -66,3 +66,11 @@ jobs:
           curl "${{ env.PING_URL }}"
         env:
           PING_URL: ${{ secrets.PING_URL }}
+          
+  keepalive:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - uses: liskin/gh-workflow-keepalive@v1
