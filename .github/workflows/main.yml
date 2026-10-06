@@ -2,7 +2,7 @@ name: Update Filter Lists
 
 on:
   schedule:
-    - cron: "0 19 * * 1"
+    - cron: "0 17 * * *"
   push:
     branches:
       - main
@@ -28,7 +28,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: 'lts/*'
+          node-version: "lts/*"
 
       - name: Install npm dependencies
         run: npm ci
